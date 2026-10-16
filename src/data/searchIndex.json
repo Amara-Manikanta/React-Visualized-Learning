@@ -1,0 +1,807 @@
+[
+  {
+    "path": "/",
+    "title": "Home Page",
+    "intro": "",
+    "sections": [],
+    "keywords": []
+  },
+  {
+    "path": "/module-1/fiber-reconciler",
+    "title": "The Fiber Reconciler & Double-Buffering Visualized",
+    "intro": "React's internal engine is not a recursive DOM tree diff. It is a cooperatively scheduled, heap-allocated virtual stack machine utilizing graphics-card double buffering to achieve stutter-free, interruptible rendering.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Video Game Buffering & Call Stacks",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. Stack Reconciler vs Fiber Reconciler",
+        "hash": "stack-vs-fiber"
+      },
+      {
+        "label": "3. Interactive Laboratory: Fiber Tree & Double-Buffering",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. The Fiber Data Structure (Internal Schema)",
+        "hash": "fiber-struct"
+      },
+      {
+        "label": "5. Traversal Algorithm: child, sibling, return",
+        "hash": "traversal-algorithm"
+      },
+      {
+        "label": "6. Render vs Commit: The Atomic Pointer Swap",
+        "hash": "render-vs-commit"
+      },
+      {
+        "label": "7. Production Architecture & Mental Model Summary",
+        "hash": "summary"
+      },
+      {
+        "label": "8. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Fiber",
+      "Fiber Reconciler",
+      "Double Buffering",
+      "workInProgress",
+      "child pointer",
+      "sibling pointer",
+      "return pointer",
+      "beginWork",
+      "completeWork",
+      "unit of work",
+      "reconciliation"
+    ]
+  },
+  {
+    "path": "/module-1/render-and-commit",
+    "title": "The Render & Commit Pipeline Visualized",
+    "intro": "Trace the lifecycle of a React update: from scheduling priority lanes to DOM mutation, layout effect measurements, browser paint, and passive effect execution.",
+    "sections": [
+      {
+        "label": "1. The Intuition: The Architect vs The Construction Crew",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Complete Pipeline Timeline",
+        "hash": "pipeline-timeline"
+      },
+      {
+        "label": "3. Commit Sub-phases: Before Mutation, Mutation, Layout",
+        "hash": "commit-subphases"
+      },
+      {
+        "label": "4. useLayoutEffect vs useEffect Relative to Paint",
+        "hash": "effects-timing"
+      },
+      {
+        "label": "5. Production Guidelines for Effect Timing",
+        "hash": "production-guidelines"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Render and Commit",
+      "Render Phase",
+      "Commit Phase",
+      "useLayoutEffect",
+      "useEffect",
+      "Browser Paint",
+      "Mutation Phase",
+      "Passive Effects"
+    ]
+  },
+  {
+    "path": "/module-1/ui-as-function-of-state",
+    "title": "UI = f(state) & Declarative vs Imperative DOM",
+    "intro": "Why React shifts frontend engineering away from manual DOM surgery toward pure, predictable mathematical state projections.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Projection vs Manual Surgery",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Mathematical Formulation: UI = f(state)",
+        "hash": "math-formulation"
+      },
+      {
+        "label": "3. Interactive Lab: Imperative jQuery vs Declarative React",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. The Pitfalls of Manual DOM Mutation",
+        "hash": "pitfalls"
+      },
+      {
+        "label": "5. Idempotence & State Projections in Production",
+        "hash": "production"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "UI as a function of state",
+      "UI = f(state)",
+      "Declarative vs Imperative",
+      "DOM surgery",
+      "State synchronization",
+      "Pure function",
+      "Idempotent"
+    ]
+  },
+  {
+    "path": "/module-1/vdom-vs-real-dom",
+    "title": "Virtual DOM vs Real DOM Visualized",
+    "intro": "Explore the mechanics of layout thrashing, batched reconciliation, synthetic event delegation, and React's O(n) diffing heuristics.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Heavy C++ DOM vs Lightweight JS Objects",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. Layout Thrashing & The Real Cost of Browser Reflows",
+        "hash": "layout-thrashing"
+      },
+      {
+        "label": "3. Interactive Lab: Real-time Layout Thrashing Simulator",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "5. SyntheticEvent System & Event Delegation",
+        "hash": "synthetic-events"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Virtual DOM",
+      "VDOM",
+      "Real DOM",
+      "Layout Thrashing",
+      "Reflow",
+      "Repaint",
+      "SyntheticEvent",
+      "Batching",
+      "Diffing heuristics"
+    ]
+  },
+  {
+    "path": "/module-2/custom-hooks",
+    "title": "Custom Hooks Architecture Visualized",
+    "intro": "Learn how to extract reusable stateful logic into clean, composable custom hooks while maintaining complete state isolation across component boundaries.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Extracting Nouns vs Verbs",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. State Isolation: Why Custom Hooks Do NOT Share State",
+        "hash": "state-isolation"
+      },
+      {
+        "label": "3. Custom Hook vs Plain Utility Function",
+        "hash": "hook-vs-util"
+      },
+      {
+        "label": "4. Production Example: useOnlineStatus & useDebounce",
+        "hash": "production-examples"
+      },
+      {
+        "label": "5. Design Checklist for Resilient Custom Hooks",
+        "hash": "design-checklist"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Custom Hooks",
+      "Hook Composition",
+      "Stateful logic extraction",
+      "State isolation",
+      "useDebounce",
+      "useOnlineStatus"
+    ]
+  },
+  {
+    "path": "/module-2/use-effect-lifecycle",
+    "title": "useEffect Lifecycle & Timing Visualized",
+    "intro": "Demystify effect execution relative to browser paint, understand why cleanup functions run with stale snapshots, and master StrictMode double-mounting.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Synchronizing with an External System",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. Execution Order: Mount, Update, Cleanup, Unmount",
+        "hash": "execution-order"
+      },
+      {
+        "label": "3. The Cleanup Paradox: Running Old Cleanup with Old State",
+        "hash": "cleanup-paradox"
+      },
+      {
+        "label": "4. StrictMode Double-Invocation in React 18 & 19",
+        "hash": "strict-mode"
+      },
+      {
+        "label": "5. Production Patterns: Handling Race Conditions",
+        "hash": "race-conditions"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "useEffect",
+      "useEffect Lifecycle",
+      "Effect Cleanup",
+      "StrictMode",
+      "Dependency Array",
+      "Race Conditions",
+      "Browser Paint"
+    ]
+  },
+  {
+    "path": "/module-2/use-memo-callback",
+    "title": "useMemo & useCallback Visualized",
+    "intro": "Master referential equality in JavaScript, understand the internal mechanics of memoization, and learn when caching values helps vs when it hurts performance.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Object Identity in JavaScript",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. useMemo vs useCallback: The Exact Difference",
+        "hash": "memo-vs-callback"
+      },
+      {
+        "label": "3. When Memoization Actually HURTS Performance",
+        "hash": "when-it-hurts"
+      },
+      {
+        "label": "4. The Only 2 Legitimate Use Cases for useCallback",
+        "hash": "legitimate-cases"
+      },
+      {
+        "label": "5. Production Checklist: Profiling Before Memoizing",
+        "hash": "production-checklist"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "useMemo",
+      "useCallback",
+      "Referential Equality",
+      "Memoization",
+      "React.memo",
+      "Cache Invalidation",
+      "Performance optimization"
+    ]
+  },
+  {
+    "path": "/module-2/use-ref",
+    "title": "useRef: Escaping React's Reactive Cycle",
+    "intro": "Learn why useRef is much more than a DOM pointer: it is a persistent, mutable memory box that survives across renders without triggering UI updates.",
+    "sections": [
+      {
+        "label": "1. The Intuition: A Secret Drawer That React Ignores",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Anatomy of useRef: Plain JavaScript Object",
+        "hash": "anatomy"
+      },
+      {
+        "label": "3. DOM Node Access vs Instance Variable Storage",
+        "hash": "dom-vs-instance"
+      },
+      {
+        "label": "4. The Golden Rule: Never Read/Write Refs in Render",
+        "hash": "golden-rule"
+      },
+      {
+        "label": "5. Production Patterns: Timer IDs & Previous Props",
+        "hash": "production-patterns"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "useRef",
+      "DOM access",
+      "Mutable box",
+      "Render cycle bypass",
+      "Persistent reference",
+      "forwardRef"
+    ]
+  },
+  {
+    "path": "/module-2/use-state-batching",
+    "title": "useState & Batching Visualized",
+    "intro": "Uncover how React processes the hook dispatch queue, why state behaves like a photographic snapshot, and how to master the infamous Stale Closure trap.",
+    "sections": [
+      {
+        "label": "1. The Intuition: State as a Photographic Snapshot",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Dispatch Queue & Circular Linked List",
+        "hash": "dispatch-queue"
+      },
+      {
+        "label": "3. Interactive Lab: Stale Closure Trap & Batching",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. Automatic Batching in React 18 & 19",
+        "hash": "automatic-batching"
+      },
+      {
+        "label": "5. Production Patterns: Avoiding Stale Closures",
+        "hash": "production-patterns"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "useState",
+      "Batching",
+      "Automatic Batching",
+      "Dispatch Queue",
+      "Stale Closure",
+      "State Snapshot",
+      "Functional Update"
+    ]
+  },
+  {
+    "path": "/module-3/composition-patterns",
+    "title": "Component Composition Patterns Visualized",
+    "intro": "Learn how structural architecture and composition (children-as-props and compound components) can eliminate 90% of re-renders without a single React.memo.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Composition Over Optimization",
+        "hash": "intuition"
+      },
+      {
+        "label": "3. Pushing State Down to Leaf Nodes",
+        "hash": "push-state-down"
+      },
+      {
+        "label": "4. The Compound Components Architecture",
+        "hash": "compound-components"
+      },
+      {
+        "label": "5. Production Architecture Comparison",
+        "hash": "comparison"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Component Composition",
+      "Children as Props",
+      "Lifting State Up",
+      "Pushing State Down",
+      "Compound Components",
+      "Render Optimization without Memo"
+    ]
+  },
+  {
+    "path": "/module-3/dom-virtualization",
+    "title": "DOM Virtualization Visualized",
+    "intro": "Learn how list windowing renders 100,000+ items at a steady 60fps by recycling a fixed pool of DOM nodes using pure geometry.",
+    "sections": [
+      {
+        "label": "1. The Intuition: The Index Card Window",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Mathematical Model of Windowing",
+        "hash": "math-model"
+      },
+      {
+        "label": "3. Interactive Lab: 10,000 Row Virtual Window Simulator",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. Overscan & Scroll Jitter Prevention",
+        "hash": "overscan"
+      },
+      {
+        "label": "5. Production Implementation with react-window",
+        "hash": "production-code"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "DOM Virtualization",
+      "List Windowing",
+      "react-window",
+      "Overscan",
+      "Scroll Offset",
+      "Virtualizer",
+      "100K items"
+    ]
+  },
+  {
+    "path": "/module-3/render-cascades-memo",
+    "title": "Re-render Cascades & React.memo Visualized",
+    "intro": "Witness how a single state update triggers render cascades through component trees, and explore how React.memo establishes firebreaks to skip entire subtrees.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Fire in the Forest Canopy",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. How React.memo Works Under the Hood",
+        "hash": "memo-mechanics"
+      },
+      {
+        "label": "3. Interactive Lab: Component Tree Render Heatmap",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. The Props Comparison Pitfall (Objects & Arrays)",
+        "hash": "comparison-pitfall"
+      },
+      {
+        "label": "5. Production Guidelines: When to Memoize",
+        "hash": "production-guidelines"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "React.memo",
+      "Render Cascades",
+      "Heatmap",
+      "Bailout",
+      "Shallow Comparison",
+      "Object.is",
+      "Component Tree"
+    ]
+  },
+  {
+    "path": "/module-3/why-components-rerender",
+    "title": "Why Components Re-render Visualized",
+    "intro": "Separate myth from reality: discover the three fundamental triggers of React re-renders and understand why calling a component function is completely different from browser painting.",
+    "sections": [
+      {
+        "label": "1. The Intuition: The 3 Core Triggers",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Parent Re-render Cascade Myth",
+        "hash": "parent-cascade"
+      },
+      {
+        "label": "3. Context Invalidation: The Silent Performance Killer",
+        "hash": "context-invalidation"
+      },
+      {
+        "label": "4. The Difference Between Rendering and Painting",
+        "hash": "render-vs-paint"
+      },
+      {
+        "label": "5. Production Checklist: Profiling Re-renders",
+        "hash": "profiling"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Why Components Re-render",
+      "Re-render Triggers",
+      "Parent re-render",
+      "Context updates",
+      "Prop mutation",
+      "Component lifecycle"
+    ]
+  },
+  {
+    "path": "/module-4/actions-forms",
+    "title": "React 19 Actions & Forms Visualized",
+    "intro": "Explore React 19's unified Action architecture: useActionState, useFormStatus, automatic form resets, and async transition lifecycles.",
+    "sections": [
+      {
+        "label": "1. The Intuition: What is a React 19 Action?",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. useActionState: Goodbye to 4 Separate useState Hooks",
+        "hash": "use-action-state"
+      },
+      {
+        "label": "3. useFormStatus: Context-Free Pending Submissions",
+        "hash": "use-form-status"
+      },
+      {
+        "label": "4. Automatic Form Reset & Optimistic Interop",
+        "hash": "automatic-reset"
+      },
+      {
+        "label": "5. Production Action Handler Pattern",
+        "hash": "production-pattern"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "React 19 Actions",
+      "useActionState",
+      "useFormStatus",
+      "Form Actions",
+      "Server Actions",
+      "Automatic form reset"
+    ]
+  },
+  {
+    "path": "/module-4/concurrent-transitions",
+    "title": "Concurrent React & Transitions Visualized",
+    "intro": "Discover how React's cooperative scheduler prioritizes urgent user keystrokes over heavy background calculations using interruptible Transition Lanes.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Urgent vs Non-Urgent Lanes",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Problem: Synchronous Typing Stutter",
+        "hash": "stutter-problem"
+      },
+      {
+        "label": "3. Interactive Lab: useTransition vs Blocking Input",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. useTransition vs useDeferredValue",
+        "hash": "transition-vs-deferred"
+      },
+      {
+        "label": "5. Production Patterns for Non-blocking Search",
+        "hash": "production-patterns"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Concurrent React",
+      "useTransition",
+      "useDeferredValue",
+      "Non-blocking rendering",
+      "Interruptible rendering",
+      "Urgent updates",
+      "Transition lanes"
+    ]
+  },
+  {
+    "path": "/module-4/optimistic-ui",
+    "title": "Optimistic UI Updates Visualized",
+    "intro": "Explore React 19's native useOptimistic hook: how transient state forking provides instantaneous user feedback and guarantees zero-boilerplate auto-rollback on failure.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Zero-Latency Psychology",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The useOptimistic Lifecycle & Auto-Rollback",
+        "hash": "lifecycle"
+      },
+      {
+        "label": "3. Interactive Lab: Live Optimistic Message Simulator",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. Under the Hood: Transient State Forking",
+        "hash": "under-the-hood"
+      },
+      {
+        "label": "5. Production Patterns for Robust Optimism",
+        "hash": "production-patterns"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "useOptimistic",
+      "Optimistic UI",
+      "React 19",
+      "Auto rollback",
+      "Network latency",
+      "Chat UI",
+      "Social like"
+    ]
+  },
+  {
+    "path": "/module-4/rsc-flight-protocol",
+    "title": "React Server Components & Flight Wire Protocol",
+    "intro": "Decode the inner mechanics of RSC: understand the Flight wire protocol, explore zero-bundle streaming, and master the 'use client' boundary.",
+    "sections": [
+      {
+        "label": "1. The Intuition: The Zero-Bundle-Size Dream",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. Server Components vs Client Components",
+        "hash": "server-vs-client"
+      },
+      {
+        "label": "3. The Flight Wire Protocol Unmasked",
+        "hash": "flight-protocol"
+      },
+      {
+        "label": "4. Interactive Lab: Inspecting Flight Stream Chunks",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "RSC",
+      "React Server Components",
+      "Flight Protocol",
+      "Zero Bundle Size",
+      "Server vs Client Components",
+      "Streaming Wire Format",
+      "use client"
+    ]
+  },
+  {
+    "path": "/module-4/use-and-suspense",
+    "title": "The use() Hook & Suspense Boundaries Visualized",
+    "intro": "Discover React 19's most versatile hook: read promises and context conditionally, eliminate useEffect data fetching waterfalls, and understand thrown-promise mechanics.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Breaking the Rules of Hooks",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Anatomy of use(): Promises vs Context",
+        "hash": "anatomy"
+      },
+      {
+        "label": "3. How Suspense Catches Thrown Promises",
+        "hash": "suspense-mechanics"
+      },
+      {
+        "label": "4. Resource Fetching: No More useEffect Waterfall",
+        "hash": "no-more-waterfall"
+      },
+      {
+        "label": "5. Production Patterns for Streaming Promises",
+        "hash": "production-patterns"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "use() Hook",
+      "React 19 use",
+      "Suspense",
+      "Suspense Boundaries",
+      "Promise streaming",
+      "Conditional hooks",
+      "Context unwrapping"
+    ]
+  },
+  {
+    "path": "/module-5/context-api",
+    "title": "React Context API & The Consumer Trap",
+    "intro": "Understand what Context was actually designed for (dependency injection) and how to avoid the catastrophic 're-render all consumers' trap through Context Splitting.",
+    "sections": [
+      {
+        "label": "1. The Intuition: Teleportation vs State Management",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Consumer Re-render Trap Explained",
+        "hash": "consumer-trap"
+      },
+      {
+        "label": "3. Context Splitting: Separating Data from Dispatch",
+        "hash": "context-splitting"
+      },
+      {
+        "label": "4. When to Use Context (And When NOT To)",
+        "hash": "when-to-use"
+      },
+      {
+        "label": "5. Production Architecture Checklist",
+        "hash": "production-checklist"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "React Context API",
+      "Consumer Re-render Trap",
+      "Dependency Injection",
+      "Context Splitting",
+      "createContext",
+      "useContext",
+      "Global State"
+    ]
+  },
+  {
+    "path": "/module-5/external-stores",
+    "title": "External Store Architecture: Zustand vs Redux",
+    "intro": "Learn how modern external stores integrate with Concurrent React using useSyncExternalStore to eliminate UI tearing and achieve surgical, atomic selector reactivity.",
+    "sections": [
+      {
+        "label": "1. The Intuition: What is UI Tearing?",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. useSyncExternalStore: The Concurrency Bridge",
+        "hash": "use-sync-external-store"
+      },
+      {
+        "label": "3. Zustand Atomic Selectors vs Context vs Redux",
+        "hash": "store-comparison"
+      },
+      {
+        "label": "4. The Subscription Pattern Under the Hood",
+        "hash": "subscription-pattern"
+      },
+      {
+        "label": "5. Production Recommendations for Modern State",
+        "hash": "production-recommendations"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "External Stores",
+      "Zustand",
+      "Redux",
+      "useSyncExternalStore",
+      "Tearing",
+      "Atomic Selectors",
+      "Subscription pattern"
+    ]
+  }
+]
