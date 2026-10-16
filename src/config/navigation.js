@@ -1,5 +1,56 @@
 export const MODULES = [
   {
+    id: "module-0",
+    title: "Module 0: Zero to React — Foundations for Absolute Beginners",
+    shortTitle: "0. Foundations (0 UI Knowledge)",
+    color: "from-emerald-500 to-teal-600",
+    badgeColor: "text-emerald-400 bg-emerald-950/40 border-emerald-500/30",
+    topics: [
+      {
+        path: "/module-0/what-is-ui-and-dom",
+        name: "0.1 What is a UI & What is the DOM?",
+        desc: "The physical layers of the web (HTML/CSS/JS), the living DOM tree, and why manual DOM surgery fails.",
+        badge: "First Principles"
+      },
+      {
+        path: "/module-0/what-is-a-component",
+        name: "0.2 What is a Component? The LEGO Mental Model",
+        desc: "Breaking screens into independent, reusable building blocks and understanding component trees.",
+        badge: "Mental Model"
+      },
+      {
+        path: "/module-0/understanding-jsx",
+        name: "0.3 Understanding JSX: HTML with Superpowers",
+        desc: "Why JSX is not HTML, how curly braces {} open JavaScript portals, and what JSX compiles into.",
+        badge: "Syntax & Engine"
+      },
+      {
+        path: "/module-0/props-passing-data",
+        name: "0.4 Props: Passing Data to Components",
+        desc: "Function arguments for UI, one-way data flow waterfalls, destructuring, and the children prop.",
+        badge: "Data Flow"
+      },
+      {
+        path: "/module-0/state-and-usestate",
+        name: "0.5 State & useState: Giving Memory to Components",
+        desc: "Why regular JS variables don't update the screen, how useState works, and the re-render loop.",
+        badge: "Reactivity"
+      },
+      {
+        path: "/module-0/handling-events-and-forms",
+        name: "0.6 Handling User Events & Interactive Forms",
+        desc: "The doorbell event model, onClick, controlled input single sources of truth, and preventDefault.",
+        badge: "Interactivity"
+      },
+      {
+        path: "/module-0/conditional-rendering-and-lists",
+        name: "0.7 Conditional Rendering & Lists with Keys",
+        desc: "Ternary & && operators, transforming data with .map(), and the luggage-tag key mystery solved.",
+        badge: "Dynamic UI"
+      }
+    ]
+  },
+  {
     id: "module-1",
     title: "Module 1: The Core Mental Model & The Fiber Engine",
     shortTitle: "1. Mental Model & Fiber",

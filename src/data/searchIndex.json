@@ -7,6 +7,279 @@
     "keywords": []
   },
   {
+    "path": "/module-0/conditional-rendering-and-lists",
+    "title": "0.7 Conditional Rendering & Lists with Keys",
+    "intro": "Master showing and hiding UI elements dynamically, mapping array data to JSX, and solving the infamous 'Key Disaster' in React reconciler.",
+    "sections": [
+      {
+        "label": "1. Conditional UI: Showing & Hiding Like a Light Switch",
+        "hash": "conditional-ui"
+      },
+      {
+        "label": "2. The 3 Patterns: if/else, Ternary, & Logical &&",
+        "hash": "the-three-patterns"
+      },
+      {
+        "label": "3. Transforming Data into UI: The Power of .map()",
+        "hash": "rendering-lists"
+      },
+      {
+        "label": "5. Interactive Laboratory: The Key Disaster Simulator",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Conditional rendering",
+      "React lists",
+      "Rendering lists with map",
+      "React key prop",
+      "Index as key anti-pattern",
+      "Ternary operator",
+      "Logical AND operator",
+      "The 0 && trap",
+      "Zero UI knowledge",
+      "List keys explained"
+    ]
+  },
+  {
+    "path": "/module-0/handling-events-and-forms",
+    "title": "0.6 Handling User Events & Interactive Forms",
+    "intro": "How React captures user clicks, keystrokes, and form submissions through SyntheticEvents and controlled input architectures.",
+    "sections": [
+      {
+        "label": "1. The Doorbell Model: Listening to User Actions",
+        "hash": "event-model"
+      },
+      {
+        "label": "2. Passing Functions vs Calling Functions: The Trap",
+        "hash": "passing-handlers"
+      },
+      {
+        "label": "3. Controlled Inputs: The Single Source of Truth",
+        "hash": "controlled-inputs"
+      },
+      {
+        "label": "5. Interactive Laboratory: Event Telemetry Lab",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Handling events",
+      "React events",
+      "Controlled components",
+      "Controlled inputs",
+      "event.preventDefault",
+      "onClick handler",
+      "onChange handler",
+      "Single source of truth",
+      "SyntheticEvent",
+      "Zero UI knowledge",
+      "Forms in React"
+    ]
+  },
+  {
+    "path": "/module-0/props-passing-data",
+    "title": "0.4 Props: Passing Data to Components",
+    "intro": "How parent components pass custom data down to child components like function arguments, and why unidirectional data flow makes UIs rock solid.",
+    "sections": [
+      {
+        "label": "1. Props as Function Arguments: Customizing Blueprints",
+        "hash": "intuition"
+      },
+      {
+        "label": "2. The Unidirectional Waterfall: One-Way Data Flow",
+        "hash": "one-way-flow"
+      },
+      {
+        "label": "3. Destructuring & Default Props: Clean Signatures",
+        "hash": "destructuring"
+      },
+      {
+        "label": "5. Interactive Laboratory: Props Waterfall Simulator",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "React props",
+      "Passing props",
+      "One way data flow",
+      "Unidirectional data flow",
+      "Props destructuring",
+      "Default props",
+      "children prop",
+      "Props are read-only",
+      "Zero UI knowledge",
+      "Component arguments"
+    ]
+  },
+  {
+    "path": "/module-0/state-and-usestate",
+    "title": "0.5 State & useState: Giving Memory to Components",
+    "intro": "Why regular variables cannot update the screen, how useState provides persistent memory, and how calling a setter triggers the miraculous re-render loop.",
+    "sections": [
+      {
+        "label": "1. Why Normal Variables Fail: The Screen Refresh Paradox",
+        "hash": "why-state"
+      },
+      {
+        "label": "2. What is State? Component Memory That Triggers Paint",
+        "hash": "what-is-state"
+      },
+      {
+        "label": "4. Interactive Laboratory: Normal Variable vs React State",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "5. The Re-render Lifecycle in Plain English",
+        "hash": "the-re-render-cycle"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "useState hook",
+      "React state",
+      "Component memory",
+      "Re-render cycle",
+      "State vs props",
+      "Local state",
+      "State setter function",
+      "Re-rendering explained",
+      "Zero UI knowledge",
+      "Array destructuring useState"
+    ]
+  },
+  {
+    "path": "/module-0/understanding-jsx",
+    "title": "0.3 Understanding JSX: HTML with Superpowers",
+    "intro": "Why React combines markup and JavaScript into JSX, how curly braces open JavaScript portals, and what JSX compiles into behind the scenes.",
+    "sections": [
+      {
+        "label": "2. The 3 Golden Rules of JSX",
+        "hash": "rules"
+      },
+      {
+        "label": "3. The Curly Braces Secret: A Portal to JavaScript",
+        "hash": "curly-braces"
+      },
+      {
+        "label": "4. Interactive Laboratory: JSX to Object Transpiler",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "5. Under the Hood: What React Actually Sees",
+        "hash": "under-the-hood"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "Understanding JSX",
+      "JSX syntax",
+      "React.createElement",
+      "Curly braces in JSX",
+      "JavaScript in JSX",
+      "Fragment syntax",
+      "className vs class",
+      "Transpilation",
+      "Zero UI knowledge",
+      "JSX rules"
+    ]
+  },
+  {
+    "path": "/module-0/what-is-a-component",
+    "title": "0.2 What is a Component? The LEGO Mental Model",
+    "intro": "How React breaks giant, fragile web pages into small, reusable, isolated building blocks that snap together like LEGO bricks.",
+    "sections": [
+      {
+        "label": "2. Anatomy of a Component: A Function That Returns UI",
+        "hash": "anatomy"
+      },
+      {
+        "label": "3. Interactive Laboratory: Component Deconstructor",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. The Component Tree: Parents, Children, and Siblings",
+        "hash": "hierarchy"
+      },
+      {
+        "label": "5. Thinking in Components: Deconstructing Real UIs",
+        "hash": "composition"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "What is a component",
+      "React components",
+      "LEGO brick analogy",
+      "Component tree",
+      "Parent child relationship",
+      "Reusable UI",
+      "Thinking in React",
+      "Zero UI knowledge",
+      "Functional component"
+    ]
+  },
+  {
+    "path": "/module-0/what-is-ui-and-dom",
+    "title": "0.1 What is a UI & What is the DOM?",
+    "intro": "The physical building blocks of the web: HTML skeletons, CSS aesthetics, JavaScript engines, and how browsers turn text into a living tree of interactive objects.",
+    "sections": [
+      {
+        "label": "1. The House Analogy: HTML, CSS, & JavaScript",
+        "hash": "analogy"
+      },
+      {
+        "label": "3. Interactive Laboratory: DOM Layer Deconstructor",
+        "hash": "interactive-lab"
+      },
+      {
+        "label": "4. The Tragedy of Vanilla DOM Surgery",
+        "hash": "vanilla-vs-react"
+      },
+      {
+        "label": "5. The React Revolution: From Surgery to Blueprints",
+        "hash": "mental-shift"
+      },
+      {
+        "label": "6. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "What is UI",
+      "What is the DOM",
+      "Document Object Model",
+      "HTML CSS JavaScript",
+      "DOM Tree",
+      "Imperative vs Declarative",
+      "DOM surgery",
+      "Zero UI knowledge",
+      "Browser rendering",
+      "Tree data structure"
+    ]
+  },
+  {
     "path": "/module-1/fiber-reconciler",
     "title": "The Fiber Reconciler & Double-Buffering Visualized",
     "intro": "React's internal engine is not a recursive DOM tree diff. It is a cooperatively scheduled, heap-allocated virtual stack machine utilizing graphics-card double buffering to achieve stutter-free, interruptible rendering.",

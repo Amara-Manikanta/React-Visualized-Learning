@@ -6,6 +6,15 @@ import { MotionConfig } from "framer-motion";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Module 0: Zero to React — Foundations for Absolute Beginners
+const WhatIsUiAndDom = lazy(() => import("./pages/module0/WhatIsUiAndDom"));
+const WhatIsAComponent = lazy(() => import("./pages/module0/WhatIsAComponent"));
+const UnderstandingJsx = lazy(() => import("./pages/module0/UnderstandingJsx"));
+const PropsPassingData = lazy(() => import("./pages/module0/PropsPassingData"));
+const StateAndUseState = lazy(() => import("./pages/module0/StateAndUseState"));
+const HandlingEventsAndForms = lazy(() => import("./pages/module0/HandlingEventsAndForms"));
+const ConditionalRenderingAndLists = lazy(() => import("./pages/module0/ConditionalRenderingAndLists"));
+
 // Module 1: The Core Mental Model & The Fiber Engine
 const UiAsFunctionOfState = lazy(() => import("./pages/module1/UiAsFunctionOfState"));
 const VdomVsRealDom = lazy(() => import("./pages/module1/VdomVsRealDom"));
@@ -65,6 +74,15 @@ export default function App() {
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
+
+            {/* Module 0: Zero to React — Foundations for Absolute Beginners */}
+            <Route path="/module-0/what-is-ui-and-dom" element={<WhatIsUiAndDom />} />
+            <Route path="/module-0/what-is-a-component" element={<WhatIsAComponent />} />
+            <Route path="/module-0/understanding-jsx" element={<UnderstandingJsx />} />
+            <Route path="/module-0/props-passing-data" element={<PropsPassingData />} />
+            <Route path="/module-0/state-and-usestate" element={<StateAndUseState />} />
+            <Route path="/module-0/handling-events-and-forms" element={<HandlingEventsAndForms />} />
+            <Route path="/module-0/conditional-rendering-and-lists" element={<ConditionalRenderingAndLists />} />
 
             {/* Module 1 */}
             <Route path="/module-1/ui-as-function-of-state" element={<UiAsFunctionOfState />} />

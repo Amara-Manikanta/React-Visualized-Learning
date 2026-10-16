@@ -54,19 +54,20 @@ export default function HomePage() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
-                to="/module-1/fiber-reconciler"
-                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-sm flex items-center gap-2.5 shadow-xl shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                to="/module-0/what-is-ui-and-dom"
+                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-white font-bold text-sm flex items-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
               >
-                <Zap className="w-4 h-4" />
-                <span>Launch Flagship: Fiber Reconciler</span>
+                <Sparkles className="w-4 h-4" />
+                <span>Zero UI Knowledge? Start Here (Topic 0.1)</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
-                to="/module-1/ui-as-function-of-state"
-                className="px-6 py-3.5 rounded-2xl bg-[#16161f] hover:bg-[#1a1a24] text-gray-200 border border-white/10 hover:border-white/20 font-semibold text-sm transition-all cursor-pointer"
+                to="/module-1/fiber-reconciler"
+                className="px-6 py-3.5 rounded-2xl bg-[#16161f] hover:bg-[#1a1a24] text-cyan-300 hover:text-cyan-200 border border-cyan-500/30 hover:border-cyan-500/50 font-semibold text-sm flex items-center gap-2 transition-all cursor-pointer"
               >
-                Start from Topic 1.1
+                <Zap className="w-4 h-4 text-cyan-400" />
+                <span>Flagship: Fiber Reconciler</span>
               </Link>
             </div>
 
@@ -159,7 +160,7 @@ export default function HomePage() {
                 Full Curriculum
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
-                5 Modules • 18 Architecture Deep Dives
+                {MODULES.length} Modules • {ALL_TOPICS.length} Visualized Lessons
               </h2>
             </div>
             <div className="flex items-center gap-2 text-xs font-mono text-gray-400">
