@@ -7,8 +7,8 @@
     "sync": "npx cap sync ios",
     "open": "npx cap open ios",
     "build:sim": "xcodebuild -workspace ios/App/App.xcworkspace -scheme App -destination 'generic/platform=iOS Simulator' -quiet build",
-    "build:device": "xcodebuild -workspace ios/App/App.xcworkspace -scheme App -destination 'id=00008120-00064D803CDB401E' -allowProvisioningUpdates build",
-    "deploy:device": "npm run build:device && xcrun devicectl device install app --device 00008120-00064D803CDB401E ~/Library/Developer/Xcode/DerivedData/App-bilzjspmwcrfxsceavwbjsoobcit/Build/Products/Debug-iphoneos/App.app",
+    "build:device": "xcodebuild -workspace ios/App/App.xcworkspace -scheme App -destination generic/platform=iOS -allowProvisioningUpdates -derivedDataPath build/derivedDataDevice build",
+    "deploy:device": "npm run build:device && xcrun devicectl device install app --device 00008120-00064D803CDB401E build/derivedDataDevice/Build/Products/Debug-iphoneos/App.app",
     "launch:device": "xcrun devicectl device process launch --device 00008120-00064D803CDB401E com.manikanta.reactvisualized"
   },
   "dependencies": {
