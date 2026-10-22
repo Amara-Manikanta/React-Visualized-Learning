@@ -1,0 +1,48 @@
+{
+  "name": "react-visualized-macos-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "macOS Desktop application for React Visualized",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "sync": "rm -rf dist && cp -R ../web-app/dist ./dist",
+    "dev": "electron .",
+    "build:mac": "npm run sync && electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.manikanta.reactvisualized",
+    "productName": "React Visualized",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "mac": {
+      "icon": "electron/icon.icns",
+      "identity": null,
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.education",
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    }
+  }
+}

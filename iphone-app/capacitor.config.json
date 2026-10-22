@@ -1,7 +1,7 @@
 {
   "appId": "com.manikanta.reactvisualized",
   "appName": "React Visualized",
-  "webDir": "dist",
+  "webDir": "../web-app/dist",
   "ios": {
     "contentInset": "automatic",
     "scheme": "React Visualized"
