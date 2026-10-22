@@ -146,7 +146,11 @@
         "hash": "the-re-render-cycle"
       },
       {
-        "label": "6. Knowledge Check",
+        "label": "6. Interactive Practice: Live React State Compiler",
+        "hash": "interactive-compiler"
+      },
+      {
+        "label": "7. Knowledge Check",
         "hash": "knowledge-check"
       }
     ],
@@ -224,7 +228,11 @@
         "hash": "composition"
       },
       {
-        "label": "6. Knowledge Check",
+        "label": "6. Interactive Practice: Live Component Compiler",
+        "hash": "interactive-compiler"
+      },
+      {
+        "label": "7. Knowledge Check",
         "hash": "knowledge-check"
       }
     ],
@@ -1075,6 +1083,153 @@
       "Tearing",
       "Atomic Selectors",
       "Subscription pattern"
+    ]
+  },
+  {
+    "path": "/prerequisites/css-and-flexbox",
+    "title": "P.2 CSS Fundamentals, The Box Model & Flexbox",
+    "intro": "Transform bare HTML bones into stunning interfaces: Master the Box Model, responsive Flexbox alignment, CSS Grid, and styling React components.",
+    "sections": [
+      {
+        "label": "1. The Dressing Room: How CSS Rules Work",
+        "hash": "how-css-works"
+      },
+      {
+        "label": "2. The Box Model: Content, Padding, Border, Margin",
+        "hash": "box-model"
+      },
+      {
+        "label": "3. Flexbox Mastery: The #1 React Layout Engine",
+        "hash": "flexbox-mastery"
+      },
+      {
+        "label": "4. Interactive Flexbox Axis Explorer",
+        "hash": "flexbox-lab"
+      },
+      {
+        "label": "5. Pseudo-Classes & Interactive States",
+        "hash": "pseudo-classes"
+      },
+      {
+        "label": "6. Connecting CSS to React: className & Inline Styles",
+        "hash": "css-in-react"
+      },
+      {
+        "label": "7. Interactive Practice: Live CSS & Layout Compiler",
+        "hash": "interactive-compiler"
+      },
+      {
+        "label": "8. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "CSS fundamentals",
+      "Flexbox layout",
+      "The box model",
+      "CSS for React",
+      "justify-content align-items",
+      "CSS Grid",
+      "CSS selectors",
+      "Pseudo-classes",
+      "className in React",
+      "CSS live compiler",
+      "Zero UI knowledge"
+    ]
+  },
+  {
+    "path": "/prerequisites/html-essentials",
+    "title": "P.1 HTML Essentials & The Element Tree",
+    "intro": "Before React comes HTML: Master tags, elements, attributes, semantic architecture, and the DOM tree hierarchy with an interactive live HTML compiler.",
+    "sections": [
+      {
+        "label": "1. The Skeleton of the Web: What is HTML?",
+        "hash": "what-is-html"
+      },
+      {
+        "label": "2. Anatomy of a Tag: Elements & Attributes",
+        "hash": "anatomy-of-tag"
+      },
+      {
+        "label": "4. Forms, Inputs & User Controls",
+        "hash": "forms-and-inputs"
+      },
+      {
+        "label": "5. The Document Tree Hierarchy",
+        "hash": "tree-hierarchy"
+      },
+      {
+        "label": "6. Interactive Practice: Live HTML Compiler",
+        "hash": "interactive-compiler"
+      },
+      {
+        "label": "7. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "HTML essentials",
+      "HTML basics",
+      "HTML for React",
+      "Semantic HTML",
+      "HTML tags",
+      "HTML attributes",
+      "HTML forms and inputs",
+      "Document structure",
+      "HTML practice compiler",
+      "Zero UI knowledge"
+    ]
+  },
+  {
+    "path": "/prerequisites/javascript-for-react",
+    "title": "P.3 Modern JavaScript (ES6+) for React",
+    "intro": "Master the modern JavaScript features you will use every day in React: Arrow functions, destructuring, the spread operator, array transformations, and immutability.",
+    "sections": [
+      {
+        "label": "1. The Big Shift: const vs let (Goodbye var)",
+        "hash": "const-vs-let"
+      },
+      {
+        "label": "2. Arrow Functions: Concise Functional Syntax",
+        "hash": "arrow-functions"
+      },
+      {
+        "label": "3. Destructuring: Unpacking Data Cleanly",
+        "hash": "destructuring"
+      },
+      {
+        "label": "4. The Spread Operator (...): Creating Clones",
+        "hash": "spread-operator"
+      },
+      {
+        "label": "5. The React Array Toolkit: map, filter, reduce",
+        "hash": "array-methods"
+      },
+      {
+        "label": "6. The Immutability Golden Rule in React",
+        "hash": "immutability"
+      },
+      {
+        "label": "7. Interactive Practice: Live JavaScript Compiler",
+        "hash": "interactive-compiler"
+      },
+      {
+        "label": "8. Knowledge Check",
+        "hash": "knowledge-check"
+      }
+    ],
+    "keywords": [
+      "JavaScript for React",
+      "Modern JavaScript ES6",
+      "Arrow functions",
+      "Destructuring objects and arrays",
+      "Spread and rest operators",
+      "Array map filter reduce",
+      "JavaScript immutability",
+      "Template literals",
+      "Async await in React",
+      "JavaScript live compiler",
+      "Zero UI knowledge"
     ]
   }
 ]

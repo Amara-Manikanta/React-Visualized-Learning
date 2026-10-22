@@ -6,6 +6,11 @@ import { MotionConfig } from "framer-motion";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Prerequisites: HTML, CSS & Modern JavaScript for React
+const HtmlEssentials = lazy(() => import("./pages/prerequisites/HtmlEssentials"));
+const CssAndFlexbox = lazy(() => import("./pages/prerequisites/CssAndFlexbox"));
+const JavascriptForReact = lazy(() => import("./pages/prerequisites/JavascriptForReact"));
+
 // Module 0: Zero to React — Foundations for Absolute Beginners
 const WhatIsUiAndDom = lazy(() => import("./pages/module0/WhatIsUiAndDom"));
 const WhatIsAComponent = lazy(() => import("./pages/module0/WhatIsAComponent"));
@@ -74,6 +79,11 @@ export default function App() {
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
+
+            {/* Prerequisites: HTML, CSS & Modern JavaScript for React */}
+            <Route path="/prerequisites/html-essentials" element={<HtmlEssentials />} />
+            <Route path="/prerequisites/css-and-flexbox" element={<CssAndFlexbox />} />
+            <Route path="/prerequisites/javascript-for-react" element={<JavascriptForReact />} />
 
             {/* Module 0: Zero to React — Foundations for Absolute Beginners */}
             <Route path="/module-0/what-is-ui-and-dom" element={<WhatIsUiAndDom />} />

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import GuideLayout from "../../components/GuideLayout";
 import CodeBlock from "../../components/CodeBlock";
 import KnowledgeCheck from "../../components/KnowledgeCheck";
+import CodeCompiler from "../../components/interactive/CodeCompiler";
 import {
   Zap,
   AlertOctagon,
   Cpu,
   RefreshCw,
-  Bell
+  Bell,
+  Terminal
 } from "lucide-react";
 
 export const SEARCH_KEYWORDS = [
@@ -29,7 +31,112 @@ const toc = [
   { label: "3. Anatomy of `useState`: Dissecting the Array Pair", hash: "anatomy-of-usestate" },
   { label: "4. Interactive Laboratory: Normal Variable vs React State", hash: "interactive-lab" },
   { label: "5. The Re-render Lifecycle in Plain English", hash: "the-re-render-cycle" },
-  { label: "6. Knowledge Check", hash: "knowledge-check" },
+  { label: "6. Interactive Practice: Live React State Compiler", hash: "interactive-compiler" },
+  { label: "7. Knowledge Check", hash: "knowledge-check" },
+];
+
+const statePracticePresets = [
+  {
+    name: "Interactive Click Counter",
+    code: `function CounterApp() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div style={{ textAlign: "center", padding: "16px" }}>
+      <h3 style={{ fontSize: "28px", color: "#38bdf8", margin: "0 0 12px 0" }}>
+        Count: {count}
+      </h3>
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+        <button 
+          onClick={() => setCount(count - 1)}
+          style={{ background: "#334155", color: "#fff", border: "none", padding: "8px 16px", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}
+        >
+          - Decrement
+        </button>
+        <button 
+          onClick={() => setCount(count + 1)}
+          style={{ background: "#0ea5e9", color: "#000", border: "none", padding: "8px 16px", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}
+        >
+          + Increment
+        </button>
+        <button 
+          onClick={() => setCount(0)}
+          style={{ background: "#ef4444", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "8px", cursor: "pointer" }}
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  );
+}`
+  },
+  {
+    name: "Live Text Input Mirror",
+    code: `function TextMirrorApp() {
+  const [text, setText] = useState("React is reactive!");
+
+  return (
+    <div style={{ padding: "16px", maxWidth: "340px", margin: "0 auto", textAlign: "left" }}>
+      <label style={{ fontSize: "12px", color: "#94a3b8", display: "block", marginBottom: "6px" }}>
+        Type to update React state live:
+      </label>
+      <input 
+        type="text" 
+        value={text} 
+        onChange={(e) => setText(e.target.value)} 
+        style={{ width: "100%", padding: "8px 12px", borderRadius: "8px", background: "#0f172a", border: "1px solid #334155", color: "#fff", boxSizing: "border-box" }}
+      />
+      <div style={{ marginTop: "12px", padding: "10px", background: "#1e293b", borderRadius: "8px", fontSize: "13px" }}>
+        <strong style={{ color: "#38bdf8" }}>Live Output:</strong> {text || "(empty)"}
+        <div style={{ fontSize: "11px", color: "#64748b", marginTop: "4px" }}>
+          Characters: {text.length}
+        </div>
+      </div>
+    </div>
+  );
+}`
+  },
+  {
+    name: "Toggle Dark / Neon Theme",
+    code: `function ThemeToggleApp() {
+  const [isDark, setIsDark] = useState(true);
+
+  return (
+    <div style={{
+      background: isDark ? "#09090d" : "#f8fafc",
+      color: isDark ? "#f8fafc" : "#0f172a",
+      padding: "20px",
+      borderRadius: "16px",
+      border: "1px solid #334155",
+      maxWidth: "320px",
+      margin: "0 auto",
+      textAlign: "center",
+      transition: "all 0.3s"
+    }}>
+      <h4 style={{ margin: "0 0 8px 0" }}>
+        {isDark ? "🌙 Cyber Dark" : "☀️ Clean Light"}
+      </h4>
+      <p style={{ fontSize: "12px", color: isDark ? "#94a3b8" : "#64748b", marginBottom: "14px" }}>
+        State controls entire component theme dynamically.
+      </p>
+      <button 
+        onClick={() => setIsDark(!isDark)}
+        style={{
+          background: isDark ? "#38bdf8" : "#0f172a",
+          color: isDark ? "#000" : "#fff",
+          border: "none",
+          padding: "8px 16px",
+          borderRadius: "8px",
+          fontWeight: "bold",
+          cursor: "pointer"
+        }}
+      >
+        Toggle Theme
+      </button>
+    </div>
+  );
+}`
+  }
 ];
 
 const quizQuestions = [
@@ -393,7 +500,27 @@ function Counter() {
         </div>
       </section>
 
-      {/* SECTION 6: Knowledge Check */}
+      {/* SECTION 6: Live Compiler Practice */}
+      <section id="interactive-compiler" className="scroll-mt-24 space-y-6">
+        <div className="flex items-center gap-2.5 text-amber-400 font-bold text-lg">
+          <Terminal className="w-5 h-5" />
+          <h2>6. Interactive Practice: Live React State Compiler</h2>
+        </div>
+
+        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+          Practice editing real React components with <code>useState</code> below. Modify the state initial values, add buttons, and see your React component compile and re-render live in the browser!
+        </p>
+
+        <CodeCompiler
+          mode="react"
+          title="React useState Live Sandbox"
+          description="Edit the React JSX component. Sucrase compiles it live, and your component renders below."
+          initialCode={statePracticePresets[0].code}
+          presets={statePracticePresets}
+        />
+      </section>
+
+      {/* SECTION 7: Knowledge Check */}
       <section id="knowledge-check" className="scroll-mt-24">
         <KnowledgeCheck questions={quizQuestions} />
       </section>

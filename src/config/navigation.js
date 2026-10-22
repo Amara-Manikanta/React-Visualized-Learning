@@ -1,5 +1,32 @@
 export const MODULES = [
   {
+    id: "module-pre",
+    title: "Prerequisites: HTML, CSS & Modern JavaScript for React",
+    shortTitle: "Prerequisites (HTML/CSS/JS)",
+    color: "from-amber-500 to-orange-600",
+    badgeColor: "text-amber-400 bg-amber-950/40 border-amber-500/30",
+    topics: [
+      {
+        path: "/prerequisites/html-essentials",
+        name: "P.1 HTML Essentials & The Element Tree",
+        desc: "Tags, semantic structure, forms, inputs, and document trees with a live practice compiler.",
+        badge: "HTML5"
+      },
+      {
+        path: "/prerequisites/css-and-flexbox",
+        name: "P.2 CSS Fundamentals, The Box Model & Flexbox",
+        desc: "Selectors, box model visualizer, responsive layouts, and Flexbox alignment with a live compiler.",
+        badge: "CSS3"
+      },
+      {
+        path: "/prerequisites/javascript-for-react",
+        name: "P.3 Modern JavaScript (ES6+) for React",
+        desc: "Arrow functions, destructuring, spread operator, .map() / .filter(), and immutability with live REPL.",
+        badge: "ES6+"
+      }
+    ]
+  },
+  {
     id: "module-0",
     title: "Module 0: Zero to React — Foundations for Absolute Beginners",
     shortTitle: "0. Foundations (0 UI Knowledge)",

@@ -35,7 +35,7 @@ export default function HomePage() {
             {/* Top Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-300 text-xs font-mono mb-6 shadow-lg shadow-cyan-500/10">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>React 19 • Fiber Architecture • Concurrency • Server Components</span>
+              <span>HTML • CSS • Modern JS • React 19 • Fiber Engine • Live Compilers</span>
             </div>
 
             {/* Headline */}
@@ -48,18 +48,25 @@ export default function HomePage() {
 
             {/* Subtitle */}
             <p className="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed font-light mb-10">
-              Master the engine beneath JSX. Explore animated Fiber double-buffering, hook closure traps, render cascade heatmaps, and React 19 RSC streaming.
+              From absolute zero UI fundamentals (HTML, CSS, modern JavaScript) to animated Fiber trees, hooks, and React 19 RSC — with live practice compilers on every lesson.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
-                to="/module-0/what-is-ui-and-dom"
-                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600 hover:from-emerald-400 hover:to-cyan-500 text-white font-bold text-sm flex items-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                to="/prerequisites/html-essentials"
+                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-orange-600 to-rose-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-sm flex items-center gap-2.5 shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
               >
                 <Sparkles className="w-4 h-4" />
-                <span>Zero UI Knowledge? Start Here (Topic 0.1)</span>
+                <span>Zero UI Knowledge? Start Here (HTML/CSS/JS)</span>
                 <ArrowRight className="w-4 h-4" />
+              </Link>
+
+              <Link
+                to="/module-0/what-is-ui-and-dom"
+                className="px-6 py-3.5 rounded-2xl bg-[#16161f] hover:bg-[#1a1a24] text-emerald-300 hover:text-emerald-200 border border-emerald-500/30 hover:border-emerald-500/50 font-semibold text-sm flex items-center gap-2 transition-all cursor-pointer"
+              >
+                <span>React Foundations (0.1)</span>
               </Link>
 
               <Link

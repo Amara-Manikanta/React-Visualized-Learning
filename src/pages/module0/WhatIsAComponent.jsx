@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GuideLayout from "../../components/GuideLayout";
 import CodeBlock from "../../components/CodeBlock";
 import KnowledgeCheck from "../../components/KnowledgeCheck";
+import CodeCompiler from "../../components/interactive/CodeCompiler";
 import {
   Box,
   Code,
@@ -10,7 +11,8 @@ import {
   CheckCircle2,
   Heart,
   MessageCircle,
-  Share2
+  Share2,
+  Terminal
 } from "lucide-react";
 
 export const SEARCH_KEYWORDS = [
@@ -31,7 +33,91 @@ const toc = [
   { label: "3. Interactive Laboratory: Component Deconstructor", hash: "interactive-lab" },
   { label: "4. The Component Tree: Parents, Children, and Siblings", hash: "hierarchy" },
   { label: "5. Thinking in Components: Deconstructing Real UIs", hash: "composition" },
-  { label: "6. Knowledge Check", hash: "knowledge-check" },
+  { label: "6. Interactive Practice: Live Component Compiler", hash: "interactive-compiler" },
+  { label: "7. Knowledge Check", hash: "knowledge-check" },
+];
+
+const componentPracticePresets = [
+  {
+    name: "Reusable Button Component",
+    code: `// A clean reusable Button component
+function CustomButton({ label = "Click Me", color = "#06b6d4" }) {
+  return (
+    <button 
+      onClick={() => alert("Button clicked!")}
+      style={{
+        background: color,
+        color: "#000",
+        fontWeight: "bold",
+        padding: "10px 20px",
+        borderRadius: "10px",
+        border: "none",
+        cursor: "pointer",
+        fontSize: "14px"
+      }}
+    >
+      {label}
+    </button>
+  );
+}
+
+// App renders multiple instances of CustomButton:
+export default function App() {
+  return (
+    <div style={{ display: "flex", gap: "12px", justifyContent: "center", padding: "20px" }}>
+      <CustomButton label="Save Draft" color="#38bdf8" />
+      <CustomButton label="Publish Post" color="#34d399" />
+      <CustomButton label="Delete" color="#f87171" />
+    </div>
+  );
+}`
+  },
+  {
+    name: "User Card Hierarchy",
+    code: `// Sub-component 1: Avatar
+function Avatar({ initials }) {
+  return (
+    <div style={{
+      width: "48px",
+      height: "48px",
+      borderRadius: "50%",
+      background: "linear-gradient(135deg, #06b6d4, #6366f1)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontWeight: "bold",
+      color: "#fff",
+      fontSize: "16px"
+    }}>
+      {initials}
+    </div>
+  );
+}
+
+// Parent component composing Avatar:
+export default function UserCard() {
+  return (
+    <div style={{
+      background: "#161622",
+      border: "1px solid #2a2a3e",
+      borderRadius: "16px",
+      padding: "20px",
+      display: "flex",
+      alignItems: "center",
+      gap: "16px",
+      maxWidth: "320px",
+      margin: "0 auto",
+      textAlign: "left"
+    }}>
+      <Avatar initials="EM" />
+      <div>
+        <h4 style={{ margin: "0 0 4px 0", color: "#fff", fontSize: "16px" }}>Elon Musk</h4>
+        <p style={{ margin: 0, color: "#94a3b8", fontSize: "12px" }}>Chief Engineer</p>
+      </div>
+    </div>
+  );
+}`
+  }
 ];
 
 const quizQuestions = [
@@ -521,7 +607,27 @@ export default function Greeting() {
         </div>
       </section>
 
-      {/* SECTION 6: Knowledge Check */}
+      {/* SECTION 6: Live Component Practice */}
+      <section id="interactive-compiler" className="scroll-mt-24 space-y-6">
+        <div className="flex items-center gap-2.5 text-amber-400 font-bold text-lg">
+          <Terminal className="w-5 h-5" />
+          <h2>6. Interactive Practice: Live Component Compiler</h2>
+        </div>
+
+        <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+          Practice building and composing real React components below. Edit component names, customize styles, and observe your component live in the preview pane:
+        </p>
+
+        <CodeCompiler
+          mode="react"
+          title="React Component Live Sandbox"
+          description="Edit and compose React components. Sucrase transforms your JSX into live UI."
+          initialCode={componentPracticePresets[0].code}
+          presets={componentPracticePresets}
+        />
+      </section>
+
+      {/* SECTION 7: Knowledge Check */}
       <section id="knowledge-check" className="scroll-mt-24">
         <KnowledgeCheck questions={quizQuestions} />
       </section>
