@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { ChevronDown, ChevronLeft, ChevronRight, Check, BookOpen, Hash } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Check, BookOpen, Hash, Code2, Sparkles } from "lucide-react";
 import GlobalHeader from "./GlobalHeader";
 import Footer from "./Footer";
 import { neighbours, sectionFor } from "../lib/pageOrder";
 import { useReadPages, setRead } from "../lib/progress";
 import UserTopicNotes from "./UserTopicNotes";
+import { getSavedDraft } from "../lib/pageSourceMap";
+
+const TopicSourceEditor = lazy(() => import("./TopicSourceEditor"));
 
 function useActiveSection(ids) {
   const [active, setActive] = useState("");
@@ -54,11 +57,17 @@ export default function GuideLayout({
   onTocClick,
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [viewMode, setViewMode] = useState("view"); // "view" | "source"
   const location = useLocation();
   const read = useReadPages();
   const isRead = read.has(location.pathname);
   const { prev, next } = neighbours(location.pathname);
   const sec = sectionFor(location.pathname);
+  const hasDraft = Boolean(getSavedDraft(location.pathname));
+
+  useEffect(() => {
+    setViewMode("view");
+  }, [location.pathname]);
 
   const ids = toc.map((item) => item.hash.replace(/^#/, ""));
   const activeId = useActiveSection(ids);
@@ -217,13 +226,74 @@ export default function GuideLayout({
             </p>
           </div>
 
-          {/* Lesson Body Content */}
-          <div className="space-y-10 lg:space-y-14">
-            {children}
+          {/* Mobile & Desktop Mode Switcher */}
+          <div className="mb-6 p-2 rounded-2xl border border-white/10 bg-[#12121a] flex flex-wrap items-center justify-between gap-3 shadow-lg">
+            <div className="flex items-center gap-1.5 p-1 rounded-xl bg-black/40 border border-white/5">
+              <button
+                type="button"
+                onClick={() => setViewMode("view")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
+                  viewMode === "view"
+                    ? "bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>View Lesson & Visualizers</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setViewMode("source")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer ${
+                  viewMode === "source"
+                    ? "bg-purple-500 text-white font-bold shadow-md shadow-purple-500/20"
+                    : "text-gray-400 hover:text-white"
+                }`}
+              >
+                <Code2 className="w-3.5 h-3.5" />
+                <span>Source Code & AI Editor</span>
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2 text-xs font-mono">
+              {hasDraft && (
+                <span className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] font-bold">
+                  <Sparkles className="w-3 h-3" />
+                  <span>Draft Active on Phone</span>
+                </span>
+              )}
+              <span className="text-gray-500 hidden sm:inline text-[11px]">
+                Travel mode: Ask AI to edit → Test live → Push to GitHub
+              </span>
+            </div>
           </div>
 
-          {/* User Offline Notes */}
-          <UserTopicNotes pagePath={location.pathname} toc={toc} />
+          {viewMode === "source" ? (
+            <Suspense
+              fallback={
+                <div className="p-12 rounded-2xl border border-white/10 bg-[#0d0d14] text-center font-mono text-xs text-gray-400 flex flex-col items-center gap-2">
+                  <div className="w-6 h-6 rounded-full border-2 border-purple-400 border-t-transparent animate-spin" />
+                  <span>Loading Source Code & Live Editor...</span>
+                </div>
+              }
+            >
+              <TopicSourceEditor
+                pathname={location.pathname}
+                onCloseViewMode={() => setViewMode("view")}
+              />
+            </Suspense>
+          ) : (
+            <>
+              {/* Lesson Body Content */}
+              <div className="space-y-10 lg:space-y-14">
+                {children}
+              </div>
+
+              {/* User Offline Notes */}
+              <UserTopicNotes pagePath={location.pathname} toc={toc} />
+            </>
+          )}
 
           {/* Footer Navigation & Progress */}
           <div className="mt-16 pt-8 border-t border-white/10">
